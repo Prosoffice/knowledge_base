@@ -10,3 +10,4 @@ alembic
 email-validator==1.0.5
 python-multipart
 bcrypt
+httpx

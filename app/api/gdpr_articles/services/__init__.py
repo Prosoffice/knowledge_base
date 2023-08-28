@@ -2,7 +2,7 @@ from typing import Generic, TypeVar, Type
 
 from pydantic import BaseModel
 
-from user_management.db.base_class import Base
+from app.db.base_class import Base
 
 ModelType = TypeVar("ModelType", bound=Base)
 CreateDtoType = TypeVar("CreateDtoType", bound=BaseModel)

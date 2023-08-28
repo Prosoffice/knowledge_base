@@ -17,7 +17,7 @@ class GDPRArticleCreateDto(GDPRArticleBase):
     context: str
 
 
-class GDPRArticleUpdateDto(GDPRArticleCreateDto):
+class GDPRArticleUpdateDto(GDPRArticleBase):
     ...
 
 

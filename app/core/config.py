@@ -16,7 +16,7 @@ class Settings:
     POSTGRES_USER: str
     POSTGRES_PASSWORD: str
     POSTGRES_DB: str
-    SQLALCHEMY_DATABASE_URI: Optional[PostgresDsn] = "postgresql+psycopg2://prosper:newpass@localhost:5432/expert_system"
+    SQLALCHEMY_DATABASE_URI: Optional[PostgresDsn] = "postgresql+psycopg2://prosper:newpass@localhost:5432/expert_system_knowledge_base"
 
 
 settings = Settings()
