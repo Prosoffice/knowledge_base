@@ -18,15 +18,23 @@ def read_gdpr_articles(
     all_gdpr_articles = gdprArticleService.get_all(db=db)
     return all_gdpr_articles
 
-
-@router.post("/gdpr_articles", response_model=GDPRArticle)
-def create(
-        *,
+@router.get("/gdpr_articles/{id}", response_model=GDPRArticle)
+def read_gdpr_articles(
+        id: int,
         db: Session = Depends(get_db),
-        user_in: GDPRArticleCreateDto,
         current_user: AuthUserDto = Depends(auth_service)
 ) -> Any:
-    new_article = gdprArticleService.create(db, obj_in=user_in)
+    gdpr_article = gdprArticleService.get(db=db, id=id)
+    return gdpr_article
+
+@router.post("/gdpr_articles", response_model=GDPRArticle)
+def create_gdpr_article(
+        *,
+        db: Session = Depends(get_db),
+        obj_in: GDPRArticleCreateDto,
+        current_user: AuthUserDto = Depends(auth_service)
+) -> Any:
+    new_article = gdprArticleService.create(db, obj_in=obj_in)
     return new_article
 
 
